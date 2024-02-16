@@ -1,6 +1,6 @@
 <script setup>
 import BookIcon from '../components/icons/BookIcon.vue'
-/* import ForwardIcon from '../components/icons/ForwardIcon.vue' */
+import ForwardIcon from '../components/icons/ForwardIcon.vue'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import BookIcon from '../components/icons/BookIcon.vue'
             <BookIcon />
 
             <!-- Forward button to navigate to SearchView -->
-            <!-- <ForwardIcon /> -->
+            <ForwardIcon />
         </div>
     </div>
 
@@ -24,7 +24,7 @@ import BookIcon from '../components/icons/BookIcon.vue'
     #backgroundImage {
         margin-top: 0;
         height: 100vh;
-        background-image: url(../assets/img/city.jpg);
+        background-image: url(../assets/img/city-background.jpg);
         background-color: #2A3340;
         background-position: center;
         background-repeat: no-repeat;
@@ -36,6 +36,6 @@ import BookIcon from '../components/icons/BookIcon.vue'
         flex-direction: column;
         align-items: center;
         padding-top: 35vh;
-        color: white;
+        color: var(--peach);
     }
 </style>
