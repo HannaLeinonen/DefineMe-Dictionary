@@ -32,10 +32,15 @@ import ForwardIcon from '../components/icons/ForwardIcon.vue'
     }
 
     .containerFluid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding-top: 35vh;
-        color: var(--peach);
     }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-family: "Roboto Slab", serif;
+    }
+
 </style>
