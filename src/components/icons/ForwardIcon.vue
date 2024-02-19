@@ -1,5 +1,9 @@
+<script setup>
+    import { RouterLink } from 'vue-router'
+</script>
+
 <template>
-  <svg
+  <RouterLink class="forwardBtn" to="/search"><svg
     width="42px"
     height="42px"
     viewBox="0 0 24.00 24.00"
@@ -24,5 +28,5 @@
         stroke-linejoin="round"
       ></path>
     </g>
-  </svg>
+  </svg></RouterLink>
 </template>
