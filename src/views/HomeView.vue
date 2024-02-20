@@ -1,13 +1,14 @@
 <script setup>
 import BookIcon from '../components/icons/BookIcon.vue'
 import ForwardIcon from '../components/icons/ForwardIcon.vue'
+let fontSize = '48px';
 </script>
 
 <template>
   <main>
     <div id="backgroundImage">
         <div class="containerFluid">
-            <h1>DefineMe</h1>
+            <h1 :style="{ fontSize: fontSize }">DefineMe</h1>
             <h2>English Dictionary</h2>
 
             <BookIcon />

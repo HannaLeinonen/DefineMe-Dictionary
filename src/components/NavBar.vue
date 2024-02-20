@@ -20,6 +20,8 @@ import BookIcon from '../components/icons/BookIcon.vue'
     <RouterView />
 </template>
 
+
+
 <style scoped>
     .brandName {
         text-decoration: none;

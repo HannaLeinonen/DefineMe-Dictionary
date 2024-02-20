@@ -1,5 +1,5 @@
 <template>
-    <!-- List all words user searched recently -->
+    <!-- List of words to display on SearchView-->
     <li>{{ terms.word }}</li>
 </template>
 
