@@ -69,7 +69,6 @@ export default {
       const response = await fetch('dictionary.json')
       const value = await response.json()
       this.dictionary = value
-      console.log(value)
     },
     /* Function to create a shuffled array with Fisher-Yates shuffle algorithm */
     shuffleArray(array) {

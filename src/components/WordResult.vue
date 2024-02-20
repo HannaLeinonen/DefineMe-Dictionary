@@ -1,26 +1,22 @@
 <script setup>
 import { useSearchStore } from '@/stores/counter';
-/* import { watch } from 'vue'; */
 
 const store = useSearchStore();
-
  // Deklarera en ref för att lagra informationen om sökordet
 const terms = {
   word: store.word
 };
-// Använd en watcher för att lyssna på förändringar i prop "terms"
-/* watch(() => terms, async (newTerm) => {
-  terms.value = newTerm; // Uppdatera "terms" med det nya objektet
-}); */
+
 </script>
 
 <template>
 
 
     <div v-if="terms">
-        <div class="wordTitle">
-            <h3>Word</h3>
+        <div class="header">
             <h1>{{ terms.word }}</h1>
+            <h4>Word</h4>
+
         </div>
         <div class="definition">
             <h4>Definition</h4>
@@ -56,9 +52,24 @@ export default {
         props: {
             terms: {
                 required: true,
-                type: Object
+                type: String
             }
         }
     }
 
 </script>
+
+<style scoped>
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        text-align: center;
+        border-bottom: 2px solid var(--peach);
+    }
+    .header h1 {
+        flex-grow: 1;
+        margin-right: 2.5rem;
+    }
+</style>

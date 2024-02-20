@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView} from 'vue-router'
+import { RouterLink} from 'vue-router'
 import BookIcon from '../components/icons/BookIcon.vue'
 </script>
 
@@ -16,8 +16,7 @@ import BookIcon from '../components/icons/BookIcon.vue'
         </nav>
     </header>
 
-    <!-- RouterView to render the component -->
-    <RouterView />
+    
 </template>
 
 
