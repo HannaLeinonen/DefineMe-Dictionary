@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <RouterLink class="forwardBtn" to="/search"><svg
+  <RouterLink to="/search"><svg
     width="42px"
     height="42px"
     viewBox="0 0 24.00 24.00"

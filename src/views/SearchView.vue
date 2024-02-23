@@ -3,21 +3,20 @@ import NavBar from '@/components/NavBar.vue'
 import PopularWords from '@/components/PopularWords.vue'
 import { useSearchStore } from '@/stores/counter'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router'
 
 const store = useSearchStore()
 const router = useRouter()
 const word = ref('')
 
 function searchWord() {
-    store.getWord(word.value) // Update word in store from input from user
-    console.log(word.value)
-
-    goToResult()
+  store.getWord(word.value) // Update word in store from input from user
+  console.log(word.value)
+  goToResult()
 }
 function goToResult() {
-    router.push('/result')
-    }
+  router.push('/result')
+}
 </script>
 
 <template>
@@ -27,14 +26,15 @@ function goToResult() {
     <!-- Form get the word to define -->
     <form id="searchForm" action="submit" @submit.prevent="searchWord">
       <input type="text" id="searchInput" v-model="word" placeholder="Search for a word" />
-      <button type="submit" id="searchBtn" aria-label="Search" @click="searchWord()">
+
+      <button type="submit" id="searchBtn" @click="searchWord()">
         <i class="bi bi-search"></i>
       </button>
     </form>
     <ul>
       <h4>{{ title }}</h4>
       <!-- For the words in popularWorlds() get component to render li elements with the words shuffled from the array -->
-      <PopularWords v-for="term in popularWords" :key="term.word" :terms="term" />
+      <PopularWords v-for="words in popularWords" :key="words.word" :terms="words" />
     </ul>
   </div>
 </template>
@@ -45,8 +45,7 @@ export default {
     return {
       /* Save the objects from json file in an array */
       dictionary: [],
-      title: 'Popular words',
-      word: ''
+      title: 'Popular words'
     }
   },
   name: 'SearchView',
@@ -56,9 +55,9 @@ export default {
   computed: {
     popularWords() {
       // Copying the dictionary array
-      const dictionaryCopy = [...this.dictionary]
+      const dictionary = this.dictionary
       // Shuffle the copied array
-      const shuffled = this.shuffleArray(dictionaryCopy)
+      const shuffled = this.shuffleArray(dictionary)
       // Slice the first 4 elements to display
       return shuffled.slice(0, 4)
     }
@@ -85,19 +84,21 @@ export default {
 <style scoped>
 #searchForm {
   width: 100%;
-  margin: 1.1rem;
+  margin-bottom: 2rem;
 }
 #searchInput {
+  margin-left: 1rem;
   border: none; /* Removing border for a cleaner look */
   outline: none;
-  width: 80%;
-  height: 5vh;
+  width: 80vw;
+  height: 4.7vh;
   padding-left: 1rem;
   border-radius: 0.5rem 0 0 0.5rem;
 }
 #searchBtn {
   border: none; /* Removing border for a cleaner look */
   border-radius: 0 0.5rem 0.5rem 0;
+  height: 5vh;
   outline: none;
   height: 5vh;
 }
@@ -105,3 +106,4 @@ export default {
   opacity: 70%;
 }
 </style>
+@/stores/store

@@ -36,10 +36,6 @@ let fontSize = '48px';
         padding-top: 35vh;
     }
 
-    h1 {
-        font-size: 48px;
-    }
-
     h2 {
         font-family: "Roboto Slab", serif;
     }
