@@ -1,13 +1,4 @@
 <script setup>
-/* import { useSearchStore } from '@/stores/counter';
-
-const store = useSearchStore();
- // Deklarera en ref för att lagra informationen om sökordet
-const searchWord = {
-  word: store.word
-
-}; */
-
 </script>
 
 <template>
@@ -55,7 +46,7 @@ export default {
         props: {
             dicionaryTerms: {
                 required: true,
-                type: Object
+                type: String
             }
         }
     }

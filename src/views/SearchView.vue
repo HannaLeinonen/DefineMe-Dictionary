@@ -11,7 +11,6 @@ const word = ref('')
 
 function searchWord() {
   store.getWord(word.value) // Update word in store from input from user
-  console.log(word.value)
   goToResult()
 }
 function goToResult() {
