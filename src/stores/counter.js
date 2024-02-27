@@ -9,7 +9,7 @@ export const useSearchStore = defineStore('searchStore', {
     actions: {
         getWord (keyword) {
             this.word = keyword
-            
+
         }
     }
 

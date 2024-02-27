@@ -105,4 +105,4 @@ export default {
   opacity: 70%;
 }
 </style>
-@/stores/store
+

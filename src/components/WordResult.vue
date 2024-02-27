@@ -3,34 +3,34 @@
 
 <template>
 
-    <div v-if="dicionaryTerms">
+    <div v-if="dictionaryTerms">
 
-        <div class="dicionaryTerms">
+        <div class="dictionaryTerms">
             <h4>Definition :</h4>
-            <p>{{ dicionaryTerms.definition }}</p>
+            <p>{{ dictionaryTerms.definition }}</p>
         </div>
 
-        <div v-if="dicionaryTerms.noun !== null" class="dicionaryTerms">
+        <div v-if="dictionaryTerms.noun !== null" class="dictionaryTerms">
             <h4>Noun :</h4>
-            <p>{{ dicionaryTerms.noun }}</p>
+            <p>{{ dictionaryTerms.noun }}</p>
         </div>
 
-        <div v-if="dicionaryTerms.verb !== null" class="dicionaryTerms">
+        <div v-if="dictionaryTerms.verb !== null" class="dictionaryTerms">
             <h4>Verb :</h4>
-            <p>{{ dicionaryTerms.verb }}</p>
+            <p>{{ dictionaryTerms.verb }}</p>
         </div>
 
-        <div class="dicionaryTerms" >
+        <div class="dictionaryTerms" >
             <h4>Synonyms :</h4>
             <ul>
-                <li v-for="synonym in dicionaryTerms.synonyms" :key="synonym">{{ synonym }}</li>
+                <li v-for="synonym in dictionaryTerms.synonyms" :key="synonym">{{ synonym }}</li>
             </ul>
         </div>
 
-        <div class="dicionaryTerms">
+        <div class="dictionaryTerms">
             <h4>Example :</h4>
             <ul>
-                <li v-for="example in dicionaryTerms.examples" :key="example">{{ example }}</li>
+                <li v-for="example in dictionaryTerms.examples" :key="example">{{ example }}</li>
             </ul>
         </div>
 
@@ -44,9 +44,9 @@
 <script>
 export default {
         props: {
-            dicionaryTerms: {
+            dictionaryTerms: {
                 required: true,
-                type: String
+                type: Object
             }
         }
     }
