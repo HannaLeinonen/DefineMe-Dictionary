@@ -54,15 +54,21 @@ export default {
 </script>
 
 <style scoped>
-    .dicionaryTerms {
+    .dictionaryTerms {
         border-bottom: 2px solid var(--peach);
+        margin: 5px 0 5px 0;
     }
+
 
     li {
         list-style: circle;
     }
+    h4 {
+        font-family: "Roboto Slab", serif;
+
+    }
 
     li, p {
-        font-family: "Roboto Slab", serif;
+        color: white;
     }
 </style>

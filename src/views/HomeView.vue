@@ -11,10 +11,16 @@ let fontSize = '48px';
             <h1 :style="{ fontSize: fontSize }">DefineMe</h1>
             <h2>English Dictionary</h2>
 
-            <BookIcon />
+            <div class="bookIcon">
+                <BookIcon />
+            </div>
 
             <!-- Forward button to navigate to SearchView -->
-            <ForwardIcon />
+            <div class="forwardBtn">
+                <h3>Start search</h3>
+                <ForwardIcon />
+            </div>
+
         </div>
     </div>
 
@@ -35,9 +41,22 @@ let fontSize = '48px';
     .containerFluid {
         padding-top: 35vh;
     }
-
+    h1 {
+        margin-bottom: 0;
+    }
     h2 {
         font-family: "Roboto Slab", serif;
+        margin: 0.2rem 0 0.6rem 0;
+        font-size: 1.3rem;
+    }
+    .forwardBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+    }
+    .forwardBtn h3 {
+        margin: 0.3rem;
     }
 
 </style>

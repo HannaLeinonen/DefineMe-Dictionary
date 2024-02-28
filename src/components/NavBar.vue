@@ -8,7 +8,7 @@ import BookIcon from '../components/icons/BookIcon.vue'
         <nav>
             <div class="containerFluid">
                 <!-- Brand name as link to home page -->
-                <RouterLink class="brandName" to="/search"><h1>DefineMe</h1></RouterLink>
+                <RouterLink class="brandName" to="/"><h1>DefineMe</h1></RouterLink>
                 <!-- Brand icon -->
                 <BookIcon />
             </div>
@@ -22,7 +22,7 @@ import BookIcon from '../components/icons/BookIcon.vue'
 
 <style scoped>
 .containerFluid {
-    margin-bottom: 10vh ;
+    margin-bottom: 5vh ;
     margin-top: 5vh ;
 }
 .brandName {

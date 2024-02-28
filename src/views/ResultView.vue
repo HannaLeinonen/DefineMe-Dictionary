@@ -23,8 +23,8 @@ async function fetchDictionary() {
 }
 
 function updateMatchingTerm() {
-  matchingTerm.value = dictionary.find(term => term.word === searchWord.value) ;
-
+  const matchedTerm = dictionary.find(term => term.word.toLowerCase() === searchWord.value.toLowerCase()) ;
+  matchingTerm.value = matchedTerm;
 }
 
 fetchDictionary();
@@ -37,12 +37,14 @@ watch(searchWord, updateMatchingTerm);
 
 <template>
   <NavBar />
-  <BackIcon />
+  <div class="backBtn">
+    <BackIcon />
+  </div>
 
   <div class="container">
     <div class="header">
-      <h1>{{ searchWord }}</h1>
-      <h4>Word</h4>
+      <h1>{{ matchingTerm.word }}</h1>
+      <h4>Word :</h4>
     </div>
 
     <WordResult :dictionaryTerms="matchingTerm" />
@@ -51,21 +53,40 @@ watch(searchWord, updateMatchingTerm);
 
 <style scoped>
 .container {
-  background-color: var(--grey);
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 5px;
+    width: 65vw;
+    background-color: var(--grey);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 5px;
 }
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse;
-  text-align: center;
-  border-bottom: 2px solid var(--peach);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-align: center;
+    border-bottom: 2px solid var(--peach);
 }
 .header h1 {
-  flex-grow: 1;
-  margin-right: 2.5rem;
+    flex-grow: 1;
+    margin-right: 2.5rem;
+    color: white;
+}
+.backBtn {
+    width: max-content;
+    margin-left: 1rem;
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container {
+        width: 65vw;
+    }
+    .backBtn{
+    width: max-content;
+    margin-left: 5.5rem;
+}
 }
 </style>
