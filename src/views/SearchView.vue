@@ -9,13 +9,16 @@ const store = useSearchStore()
 const router = useRouter()
 const word = ref('')
 
-function searchWord() {
-  store.getWord(word.value) // Update word in store from input from user
-  goToResult()
-}
+// Function to route to ResultView
 function goToResult() {
   router.push('/result')
 }
+// Function for the onClick or pressed ENTER in searchform
+function searchWord() {
+  store.getWord(word.value) // Update word in store from input from user
+  goToResult() // Calling the route function
+}
+
 </script>
 
 <template>
@@ -27,7 +30,7 @@ function goToResult() {
       <input type="text" id="searchInput" v-model="word" placeholder="Search for a word" />
 
       <button type="submit" id="searchBtn" @click="searchWord()">
-        <i class="bi bi-search"></i>
+        <i class="bi bi-search-heart"></i>
       </button>
     </form>
     <ul>
@@ -42,7 +45,7 @@ function goToResult() {
 export default {
   data() {
     return {
-      /* Save the objects from json file in an array */
+      // Save the objects from json file in an array
       dictionary: [],
       title: 'Popular words'
     }
@@ -53,22 +56,20 @@ export default {
   },
   computed: {
     popularWords() {
-      // Copying the dictionary array
-      const dictionary = this.dictionary
-      // Shuffle the copied array
-      const shuffled = this.shuffleArray(dictionary)
+      // Create a copy of the dictionary array with the shuffledArray function
+      const shuffled = this.shuffleArray([...this.dictionary])
       // Slice the first 4 elements to display
-      return shuffled.slice(0, 4)
+      return shuffled.slice(0, 6)
     }
   },
   methods: {
-    /* Fetching data fron JSON-file */
+    // Fetching data fron JSON-file
     async fetchDictionary() {
       const response = await fetch('dictionary.json')
       const value = await response.json()
       this.dictionary = value
     },
-    /* Function to create a shuffled array with Fisher-Yates shuffle algorithm */
+    // Function to create a shuffled array with Fisher-Yates shuffle algorithm
     shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
@@ -81,28 +82,69 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
 #searchForm {
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
   margin-bottom: 2rem;
 }
 #searchInput {
-  margin-left: 1rem;
   border: none; /* Removing border for a cleaner look */
   outline: none;
-  width: 80vw;
-  height: 4.7vh;
+  width: 85%;
+  height: 48px;
   padding-left: 1rem;
   border-radius: 0.5rem 0 0 0.5rem;
 }
 #searchBtn {
-  border: none; /* Removing border for a cleaner look */
+  border: none;
   border-radius: 0 0.5rem 0.5rem 0;
-  height: 5vh;
+  height: 50px;
+  width: 9%;
   outline: none;
-  height: 5vh;
+  background-color: white;
+  cursor: pointer;
 }
 #searchBtn .bi {
   opacity: 70%;
 }
+
+/* Setting negative value on ul because it has default margin I don't want */
+ul {
+  margin-left: -1.5rem;
+  list-style: none;
+}
+ul h4 {
+  font-size: 17px;
+}
+
+/* Media-queries tablets (default is mobile) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+    width: 80vw;
+  }
+
+  #searchForm {
+    margin: 0 auto;
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+  ul {
+    margin-left: 3.5rem;
+  }
+}
+
+/* Media-queries desktop */
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 35vw;
+  }
+  ul {
+    margin-left: 0;
+  }
+}
 </style>
-@/stores/store

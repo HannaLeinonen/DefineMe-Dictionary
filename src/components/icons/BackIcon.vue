@@ -1,51 +1,49 @@
 <script setup>
-    import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
   <div>
     <RouterLink to="/search">
-        <svg
-            width="42px"
-            height="42px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <svg
+        width="50px"
+        height="50px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="#CCCCCC"
+          stroke-width="1.152"
         >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-            id="SVGRepo_tracerCarrier"
+          <path
+            d="M11 9L8 12M8 12L11 15M8 12H16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+            stroke="#E6D5CE"
+            stroke-width="0.624"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke="#CCCCCC"
-            stroke-width="1.152"
-            >
-            <path
-                d="M11 9L8 12M8 12L11 15M8 12H16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                stroke="#E6D5CE"
-                stroke-width="0.624"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            ></path>
-            </g>
-            <g id="SVGRepo_iconCarrier">
-            <path
-                d="M11 9L8 12M8 12L11 15M8 12H16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                stroke="#E6D5CE"
-                stroke-width="0.8640000000000001"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            ></path>
-            </g>
-        </svg>
+          ></path>
+        </g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M11 9L8 12M8 12L11 15M8 12H16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+            stroke="#E6D5CE"
+            stroke-width="0.8640000000000001"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </g>
+      </svg>
     </RouterLink>
-
-
   </div>
 </template>
 
 <style scoped>
-    svg {
-        margin: 1rem;
-    }
+svg {
+  margin: 0 1rem 0 1rem;
+}
 </style>
