@@ -1,23 +1,21 @@
 <template>
-    <!-- List of words to display on SearchView-->
-    <li>{{ terms.word }}</li>
+  <!-- List of words to display on SearchView-->
+  <li>{{ terms.word }}</li>
 </template>
 
 <script>
-
-    export default {
-        props: {
-            terms: {
-                required: true,
-                type: Object
-            }
-        }
+export default {
+  props: {
+    terms: {
+      required: true,
+      type: Object
     }
-
+  }
+}
 </script>
 
 <style>
-ul {
-    list-style: none;
+li {
+  font-weight: 200;
 }
 </style>
